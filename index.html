@@ -51,7 +51,31 @@
             <h3 class="product-card-name">Junior Stilts</h3>
             <p class="product-card-desc">Perfect for beginners and younger performers. Adjustable height, padded foot rests, lightweight aluminum frame.</p>
             <p class="product-card-price">from $180</p>
-            <a href="#" class="product-card-link" onclick="openModal('junior'); return false;">View details →</a>
+            <a href="#" class="product-card-link" data-key="junior">View details →</a>
+          </div>
+          <div class="product-details" id="details-junior">
+            <h4>Overview</h4>
+            <p>Designed for beginners and younger performers, the Junior Stilts offer a safe and comfortable first step into stilt walking. Lightweight, stable, and easy to adjust.</p>
+            <h4>Specifications</h4>
+            <ul>
+              <li>Height range: 30–60 cm above the ground</li>
+              <li>Frame: aircraft-grade aluminum</li>
+              <li>Max load: 100 kg</li>
+              <li>Weight: 1.8 kg per pair</li>
+              <li>Padded foot rests with velcro straps</li>
+              <li>Rubber non-slip foot caps</li>
+              <li>Ages 8+ recommended</li>
+            </ul>
+            <h4>Includes</h4>
+            <ul>
+              <li>One pair of stilts</li>
+              <li>Carry bag</li>
+              <li>Quick-start guide</li>
+            </ul>
+            <div class="details-footer">
+              <span class="details-price">from $180</span>
+              <a href="#contact" class="btn" style="font-size:0.85rem; padding:0.7rem 1.5rem;">Order Now</a>
+            </div>
           </div>
         </div>
 
@@ -62,7 +86,32 @@
             <h3 class="product-card-name">Pro Stage Stilts</h3>
             <p class="product-card-desc">Built for demanding performances. High-load steel core, quick-release buckles, ergonomic ankle support system.</p>
             <p class="product-card-price">from $320</p>
-            <a href="#" class="product-card-link" onclick="openModal('pro'); return false;">View details →</a>
+            <a href="#" class="product-card-link" data-key="pro">View details →</a>
+          </div>
+          <div class="product-details" id="details-pro">
+            <h4>Overview</h4>
+            <p>Built for demanding stage and street performances. The Pro Stage Stilts combine industrial-strength construction with ergonomic comfort for long-duration wear.</p>
+            <h4>Specifications</h4>
+            <ul>
+              <li>Height range: 40–90 cm above the ground</li>
+              <li>Frame: steel core with aluminum shell</li>
+              <li>Max load: 160 kg</li>
+              <li>Weight: 3.2 kg per pair</li>
+              <li>Quick-release 3-buckle system</li>
+              <li>Molded EVA foam ankle support</li>
+              <li>Replaceable rubber foot pads</li>
+            </ul>
+            <h4>Includes</h4>
+            <ul>
+              <li>One pair of stilts</li>
+              <li>Hard protective case</li>
+              <li>Spare buckle set</li>
+              <li>Spare foot pads</li>
+            </ul>
+            <div class="details-footer">
+              <span class="details-price">from $320</span>
+              <a href="#contact" class="btn" style="font-size:0.85rem; padding:0.7rem 1.5rem;">Order Now</a>
+            </div>
           </div>
         </div>
 
@@ -73,7 +122,33 @@
             <h3 class="product-card-name">Peg Stilts</h3>
             <p class="product-card-desc">Traditional circus peg stilts for acrobatic acts. Maximum height, welded steel construction, non-slip grips.</p>
             <p class="product-card-price">from $420</p>
-            <a href="#" class="product-card-link" onclick="openModal('peg'); return false;">View details →</a>
+            <a href="#" class="product-card-link" data-key="peg">View details →</a>
+          </div>
+          <div class="product-details" id="details-peg">
+            <h4>Overview</h4>
+            <p>The classic circus peg stilt — no foot platform, maximum height, pure acrobatics. Used by professional circus artists worldwide for the most dramatic performances.</p>
+            <h4>Specifications</h4>
+            <ul>
+              <li>Height range: 60–150 cm above the ground</li>
+              <li>Frame: welded steel, powder coated</li>
+              <li>Max load: 200 kg</li>
+              <li>Weight: 4.5 kg per pair</li>
+              <li>Leather boot attachment system</li>
+              <li>Non-slip rubber peg tips</li>
+              <li>Custom height on request</li>
+            </ul>
+            <h4>Important</h4>
+            <p>Peg stilts require prior experience with platform stilts. We recommend training before use.</p>
+            <h4>Includes</h4>
+            <ul>
+              <li>One pair of stilts</li>
+              <li>Hard protective case</li>
+              <li>Leather boot straps</li>
+            </ul>
+            <div class="details-footer">
+              <span class="details-price">from $420</span>
+              <a href="#contact" class="btn" style="font-size:0.85rem; padding:0.7rem 1.5rem;">Order Now</a>
+            </div>
           </div>
         </div>
 
@@ -163,23 +238,6 @@
     </div>
   </section>
 
-  <!-- Modal -->
-  <div class="modal-overlay" id="modalOverlay">
-    <div class="modal">
-      <div class="modal-header">
-        <h3 class="modal-title" id="modalTitle"></h3>
-        <button class="modal-close" aria-label="Close">&times;</button>
-      </div>
-      <div class="modal-scroll">
-        <div class="modal-body" id="modalBody"></div>
-      </div>
-      <div class="modal-footer">
-        <button class="modal-btn-close">Close</button>
-        <a href="#contact" class="btn" id="modalOrderBtn" style="font-size:0.85rem; padding:0.7rem 1.5rem;">Order Now</a>
-      </div>
-    </div>
-  </div>
-
   <!-- Footer -->
   <footer>
     <p>© 2026 SkyStep Stilts. All rights reserved.</p>
@@ -208,108 +266,26 @@
     }, { threshold: 0.05 });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-    // Product data
-    const products = {
-      junior: {
-        title: 'Junior Stilts',
-        body: `
-          <h4>Overview</h4>
-          <p>Designed for beginners and younger performers, the Junior Stilts offer a safe and comfortable first step into stilt walking. Lightweight, stable, and easy to adjust.</p>
-          <h4>Specifications</h4>
-          <ul>
-            <li>Height range: 30–60 cm above the ground</li>
-            <li>Frame: aircraft-grade aluminum</li>
-            <li>Max load: 100 kg</li>
-            <li>Weight: 1.8 kg per pair</li>
-            <li>Padded foot rests with velcro straps</li>
-            <li>Rubber non-slip foot caps</li>
-            <li>Ages 8+ recommended</li>
-          </ul>
-          <h4>Includes</h4>
-          <ul>
-            <li>One pair of stilts</li>
-            <li>Carry bag</li>
-            <li>Quick-start guide</li>
-          </ul>
-          <div class="modal-price">from $180</div>
-        `
-      },
-      pro: {
-        title: 'Pro Stage Stilts',
-        body: `
-          <h4>Overview</h4>
-          <p>Built for demanding stage and street performances. The Pro Stage Stilts combine industrial-strength construction with ergonomic comfort for long-duration wear.</p>
-          <h4>Specifications</h4>
-          <ul>
-            <li>Height range: 40–90 cm above the ground</li>
-            <li>Frame: steel core with aluminum shell</li>
-            <li>Max load: 160 kg</li>
-            <li>Weight: 3.2 kg per pair</li>
-            <li>Quick-release 3-buckle system</li>
-            <li>Molded EVA foam ankle support</li>
-            <li>Replaceable rubber foot pads</li>
-          </ul>
-          <h4>Includes</h4>
-          <ul>
-            <li>One pair of stilts</li>
-            <li>Hard protective case</li>
-            <li>Spare buckle set</li>
-            <li>Spare foot pads</li>
-          </ul>
-          <div class="modal-price">from $320</div>
-        `
-      },
-      peg: {
-        title: 'Peg Stilts',
-        body: `
-          <h4>Overview</h4>
-          <p>The classic circus peg stilt — no foot platform, maximum height, pure acrobatics. These are the stilts used by professional circus artists worldwide for the most dramatic performances.</p>
-          <h4>Specifications</h4>
-          <ul>
-            <li>Height range: 60–150 cm above the ground</li>
-            <li>Frame: welded steel, powder coated</li>
-            <li>Max load: 200 kg</li>
-            <li>Weight: 4.5 kg per pair</li>
-            <li>Leather boot attachment system</li>
-            <li>Non-slip rubber peg tips</li>
-            <li>Custom height on request</li>
-          </ul>
-          <h4>Important</h4>
-          <p>Peg stilts require prior experience with platform stilts. We recommend training before use.</p>
-          <h4>Includes</h4>
-          <ul>
-            <li>One pair of stilts</li>
-            <li>Hard protective case</li>
-            <li>Leather boot straps</li>
-          </ul>
-          <div class="modal-price">from $420</div>
-        `
-      }
-    };
+    // Product details toggle
+    document.querySelectorAll('.product-card-link[data-key]').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const key = link.dataset.key;
+        const panel = document.getElementById('details-' + key);
+        const card = link.closest('.product-card');
+        const isOpen = panel.classList.contains('open');
 
-    const modalOverlay = document.getElementById('modalOverlay');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalBody = document.getElementById('modalBody');
-    const modalOrderBtn = document.getElementById('modalOrderBtn');
+        // close all panels
+        document.querySelectorAll('.product-details').forEach(p => p.classList.remove('open'));
+        document.querySelectorAll('.product-card-link[data-key]').forEach(l => l.textContent = 'View details →');
 
-    function openModal(key) {
-      const p = products[key];
-      modalTitle.textContent = p.title;
-      modalBody.innerHTML = p.body;
-      modalOverlay.classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
-
-    const closeModal = () => {
-      modalOverlay.classList.remove('open');
-      document.body.style.overflow = '';
-    };
-
-    document.querySelector('.modal-close').addEventListener('click', closeModal);
-    document.querySelector('.modal-btn-close').addEventListener('click', closeModal);
-    modalOrderBtn.addEventListener('click', closeModal);
-    modalOverlay.addEventListener('click', e => { if (e.target === modalOverlay) closeModal(); });
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+        if (!isOpen) {
+          panel.classList.add('open');
+          link.textContent = 'Hide details ↑';
+          card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      });
+    });
   </script>
 
 </body>
