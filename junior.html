@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Junior Stilts — Dragon.Stilts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body { padding: 2rem 1.5rem; max-width: 700px; margin: 0 auto; }
+    .product-page-back { display:inline-flex; align-items:center; gap:0.5rem; color:var(--gray); text-decoration:none; font-size:0.9rem; margin-bottom:2rem; transition:color 0.2s; }
+    .product-page-back:hover { color:var(--accent); }
+    .product-page-back svg { width:16px; height:16px; }
+  </style>
+</head>
+<body>
+
+  <a href="javascript:window.close()" class="product-page-back">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+    Back
+  </a>
+
+  <p class="product-card-tag">Beginner</p>
+  <h1 style="font-family:var(--font-serif);font-size:2rem;color:var(--text);margin:0.3rem 0 1.2rem;">Junior Stilts</h1>
+
+  <div class="modal-images">
+    <img src="Gallery/stilts01.jpg" alt="Junior Stilts" class="modal-img-thumb" />
+  </div>
+
+  <p>Designed for beginners and younger performers. Lightweight, stable, and easy to adjust — a safe first step into stilt walking.</p>
+
+  <h4>Specifications</h4>
+  <ul style="list-style:none;margin:0.5rem 0 1rem;line-height:1.9;">
+    <li>— Height range: 30–60 cm above the ground</li>
+    <li>— Material: aluminum + steel</li>
+    <li>— Weight: 3600 g per pair (2 stilts)</li>
+    <li>— Max load: 80 kg</li>
+    <li>— Padded foot rests with velcro straps</li>
+    <li>— Rubber non-slip foot caps</li>
+    <li>— Ages 13+ recommended</li>
+  </ul>
+
+  <h4>Configure Your Stilts</h4>
+  <div class="dropdowns-row">
+    <div class="dropdown-group">
+      <label class="dropdown-label" for="junior-height">Stilt Height</label>
+      <select class="height-select" id="junior-height">
+        <option value="0">30–50 cm</option>
+        <option value="40">60–90 cm (+$40)</option>
+      </select>
+    </div>
+    <div class="dropdown-group">
+      <label class="dropdown-label" for="junior-upper">Upper Part Height</label>
+      <select class="height-select" id="junior-upper">
+        <option value="0">30–40 cm</option>
+        <option value="10">20–30 cm (+$10)</option>
+        <option value="20">40–50 cm (+$20)</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="modal-images" style="margin-top:1.2rem;">
+    <img src="Gallery/stilts02.jpg" alt="Junior Stilts detail" class="modal-img-thumb" />
+    <img src="Gallery/stilts03.jpg" alt="Junior Stilts side" class="modal-img-thumb" />
+  </div>
+
+  <h4>Includes</h4>
+  <ul style="list-style:none;margin:0.5rem 0 1rem;line-height:1.9;">
+    <li>— One pair of stilts</li>
+    <li>— The bag is included</li>
+    <li>— Quick-start guide</li>
+  </ul>
+
+  <h4>Technical Documentation</h4>
+  <a href="Ergo Tripod Dragon.Kinbaku 2026_04_13.pdf" download class="btn" style="display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:2rem;">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+    Download Technical Documentation
+  </a>
+
+  <div class="details-footer">
+    <span class="details-price" id="junior-price">$280</span>
+    <a href="index.html#contact" class="btn" style="font-size:0.85rem;padding:0.7rem 1.5rem;">Order Now</a>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close">&times;</button>
+    <img id="lightbox-img" src="" alt="" />
+  </div>
+
+  <script>
+    // Price calculator
+    const BASE = 280;
+    function updatePrice() {
+      const h = parseInt(document.getElementById('junior-height').value) || 0;
+      const u = parseInt(document.getElementById('junior-upper').value) || 0;
+      document.getElementById('junior-price').textContent = '$' + (BASE + h + u);
+    }
+    document.getElementById('junior-height').addEventListener('change', updatePrice);
+    document.getElementById('junior-upper').addEventListener('change', updatePrice);
+
+    // Lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    document.querySelectorAll('.modal-img-thumb').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.classList.add('open');
+      });
+    });
+    document.querySelector('.lightbox-close').addEventListener('click', () => lightbox.classList.remove('open'));
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) lightbox.classList.remove('open'); });
+  </script>
+
+</body>
+</html>
