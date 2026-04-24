@@ -28,8 +28,17 @@
   <p class="product-card-tag" data-ua="Початківець" data-en="Beginner">Початківець</p>
   <h1 style="font-family:var(--font-serif);font-size:2rem;color:var(--text);margin:0.3rem 0 1.2rem;">Junior Stilts</h1>
 
-  <div class="modal-images">
-    <img src="Gallery/stilts01.jpg" alt="Junior Stilts" class="modal-img-thumb" />
+  <div class="gallery" id="product-gallery">
+    <div class="gallery-main">
+      <button class="gallery-arrow gallery-prev" aria-label="Prev">&#8249;</button>
+      <img class="gallery-main-img" id="gallery-main-img" src="Gallery/stilts01.jpg" alt="Junior Stilts" />
+      <button class="gallery-arrow gallery-next" aria-label="Next">&#8250;</button>
+    </div>
+    <div class="gallery-thumbs" id="gallery-thumbs">
+      <img class="gallery-thumb active" src="Gallery/stilts01.jpg" alt="" data-index="0" />
+      <img class="gallery-thumb" src="Gallery/stilts02.jpg" alt="" data-index="1" />
+      <img class="gallery-thumb" src="Gallery/stilts03.jpg" alt="" data-index="2" />
+    </div>
   </div>
 
   <p data-ua="Розроблені для початківців та молодих артистів. Легкі, стабільні та прості в налаштуванні — безпечний перший крок у ходьбі на ходулях." data-en="Designed for beginners and younger performers. Lightweight, stable, and easy to adjust — a safe first step into stilt walking.">Розроблені для початківців та молодих артистів. Легкі, стабільні та прості в налаштуванні — безпечний перший крок у ходьбі на ходулях.</p>
@@ -64,10 +73,6 @@
     </div>
   </div>
 
-  <div class="modal-images" style="margin-top:1.2rem;">
-    <img src="Gallery/stilts02.jpg" alt="Junior Stilts detail" class="modal-img-thumb" />
-    <img src="Gallery/stilts03.jpg" alt="Junior Stilts side" class="modal-img-thumb" />
-  </div>
 
   <h4 data-ua="Комплектація" data-en="Includes">Комплектація</h4>
   <ul style="list-style:none;margin:0.5rem 0 1rem;line-height:1.9;">
@@ -123,12 +128,26 @@
     document.getElementById('junior-height').addEventListener('change', updatePrice);
     document.getElementById('junior-upper').addEventListener('change', updatePrice);
 
-    // Lightbox
+    // Gallery
+    const thumbs = [...document.querySelectorAll('.gallery-thumb')];
+    const mainImg = document.getElementById('gallery-main-img');
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
-    document.querySelectorAll('.modal-img-thumb').forEach(img => {
-      img.addEventListener('click', () => { lightboxImg.src = img.src; lightbox.classList.add('open'); });
-    });
+    let current = 0;
+
+    function showSlide(idx) {
+      current = (idx + thumbs.length) % thumbs.length;
+      mainImg.src = thumbs[current].src;
+      thumbs.forEach((t, i) => t.classList.toggle('active', i === current));
+      thumbs[current].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    }
+
+    thumbs.forEach((t, i) => t.addEventListener('click', () => showSlide(i)));
+    document.querySelector('.gallery-prev').addEventListener('click', () => showSlide(current - 1));
+    document.querySelector('.gallery-next').addEventListener('click', () => showSlide(current + 1));
+
+    // Lightbox on main image click
+    mainImg.addEventListener('click', () => { lightboxImg.src = mainImg.src; lightbox.classList.add('open'); });
     document.querySelector('.lightbox-close').addEventListener('click', () => lightbox.classList.remove('open'));
     lightbox.addEventListener('click', e => { if (e.target === lightbox) lightbox.classList.remove('open'); });
   </script>
