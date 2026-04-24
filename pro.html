@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,43 +12,61 @@
     .product-page-back { display:inline-flex; align-items:center; gap:0.5rem; color:var(--gray); text-decoration:none; font-size:0.9rem; margin-bottom:2rem; transition:color 0.2s; }
     .product-page-back:hover { color:var(--accent); }
     .product-page-back svg { width:16px; height:16px; }
+    .page-header { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1rem; margin-bottom:1.2rem; }
   </style>
 </head>
 <body>
 
-  <a href="javascript:window.close()" class="product-page-back">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
-    Back
-  </a>
+  <div class="page-header">
+    <a href="javascript:window.close()" class="product-page-back">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+      <span data-ua="Назад" data-en="Back">Назад</span>
+    </a>
+    <button id="lang-toggle" class="lang-btn">EN</button>
+  </div>
 
-  <p class="product-card-tag">Professional</p>
+  <p class="product-card-tag" data-ua="Професійний" data-en="Professional">Професійний</p>
   <h1 style="font-family:var(--font-serif);font-size:2rem;color:var(--text);margin:0.3rem 0 1.2rem;">Pro Stage Stilts</h1>
 
-  <p>Built for demanding stage and street performances. The Pro Stage Stilts combine industrial-strength construction with ergonomic comfort for long-duration wear.</p>
+  <p data-ua="Створені для вибагливих сценічних та вуличних виступів. Промислова конструкція поєднується з ергономічним комфортом для тривалого використання." data-en="Built for demanding stage and street performances. Industrial-strength construction combined with ergonomic comfort for long-duration wear.">Створені для вибагливих сценічних та вуличних виступів. Промислова конструкція поєднується з ергономічним комфортом для тривалого використання.</p>
 
-  <h4>Specifications</h4>
+  <h4 data-ua="Характеристики" data-en="Specifications">Характеристики</h4>
   <ul style="list-style:none;margin:0.5rem 0 1rem;line-height:1.9;">
-    <li>— Height range: 40–90 cm above the ground</li>
-    <li>— Frame: steel core with aluminum shell</li>
-    <li>— Max load: 160 kg</li>
-    <li>— Weight: 3.2 kg per pair</li>
-    <li>— Quick-release 3-buckle system</li>
-    <li>— Molded EVA foam ankle support</li>
-    <li>— Replaceable rubber foot pads</li>
+    <li data-ua="— Висота: 40–90 см над землею" data-en="— Height range: 40–90 cm above the ground">— Висота: 40–90 см над землею</li>
+    <li data-ua="— Каркас: сталевий стрижень з алюмінієвою оболонкою" data-en="— Frame: steel core with aluminum shell">— Каркас: сталевий стрижень з алюмінієвою оболонкою</li>
+    <li data-ua="— Максимальне навантаження: 160 кг" data-en="— Max load: 160 kg">— Максимальне навантаження: 160 кг</li>
+    <li data-ua="— Вага: 3,2 кг (пара)" data-en="— Weight: 3.2 kg per pair">— Вага: 3,2 кг (пара)</li>
+    <li data-ua="— Система швидкого розстібання (3 застібки)" data-en="— Quick-release 3-buckle system">— Система швидкого розстібання (3 застібки)</li>
+    <li data-ua="— Формована EVA-піна для підтримки гомілки" data-en="— Molded EVA foam ankle support">— Формована EVA-піна для підтримки гомілки</li>
+    <li data-ua="— Змінні гумові підошви" data-en="— Replaceable rubber foot pads">— Змінні гумові підошви</li>
   </ul>
 
-  <h4>Includes</h4>
+  <h4 data-ua="Комплектація" data-en="Includes">Комплектація</h4>
   <ul style="list-style:none;margin:0.5rem 0 1rem;line-height:1.9;">
-    <li>— One pair of stilts</li>
-    <li>— Hard protective case</li>
-    <li>— Spare buckle set</li>
-    <li>— Spare foot pads</li>
+    <li data-ua="— Пара ходуль" data-en="— One pair of stilts">— Пара ходуль</li>
+    <li data-ua="— Жорсткий захисний кейс" data-en="— Hard protective case">— Жорсткий захисний кейс</li>
+    <li data-ua="— Запасний комплект застібок" data-en="— Spare buckle set">— Запасний комплект застібок</li>
+    <li data-ua="— Запасні підошви" data-en="— Spare foot pads">— Запасні підошви</li>
   </ul>
 
   <div class="details-footer">
     <span class="details-price">$320</span>
-    <a href="index.html#contact" class="btn" style="font-size:0.85rem;padding:0.7rem 1.5rem;">Order Now</a>
+    <a href="index.html#contact" class="btn" style="font-size:0.85rem;padding:0.7rem 1.5rem;" data-ua="Замовити" data-en="Order Now">Замовити</a>
   </div>
+
+  <script>
+    function setLang(lang) {
+      document.querySelectorAll('[data-ua]').forEach(el => { el.textContent = el.dataset[lang]; });
+      document.documentElement.lang = lang === 'ua' ? 'uk' : 'en';
+      document.getElementById('lang-toggle').textContent = lang === 'ua' ? 'EN' : 'UA';
+      localStorage.setItem('lang', lang);
+    }
+    const savedLang = localStorage.getItem('lang') || 'ua';
+    setLang(savedLang);
+    document.getElementById('lang-toggle').addEventListener('click', () => {
+      setLang((localStorage.getItem('lang') || 'ua') === 'ua' ? 'en' : 'ua');
+    });
+  </script>
 
 </body>
 </html>

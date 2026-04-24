@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,45 +12,63 @@
     .product-page-back { display:inline-flex; align-items:center; gap:0.5rem; color:var(--gray); text-decoration:none; font-size:0.9rem; margin-bottom:2rem; transition:color 0.2s; }
     .product-page-back:hover { color:var(--accent); }
     .product-page-back svg { width:16px; height:16px; }
+    .page-header { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1rem; margin-bottom:1.2rem; }
   </style>
 </head>
 <body>
 
-  <a href="javascript:window.close()" class="product-page-back">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
-    Back
-  </a>
+  <div class="page-header">
+    <a href="javascript:window.close()" class="product-page-back">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+      <span data-ua="Назад" data-en="Back">Назад</span>
+    </a>
+    <button id="lang-toggle" class="lang-btn">EN</button>
+  </div>
 
-  <p class="product-card-tag">Classic Circus</p>
+  <p class="product-card-tag" data-ua="Класичний цирк" data-en="Classic Circus">Класичний цирк</p>
   <h1 style="font-family:var(--font-serif);font-size:2rem;color:var(--text);margin:0.3rem 0 1.2rem;">Peg Stilts</h1>
 
-  <p>The classic circus peg stilt — no foot platform, maximum height, pure acrobatics. Used by professional circus artists worldwide for the most dramatic performances.</p>
+  <p data-ua="Класичні циркові ходулі без платформи — максимальна висота, чиста акробатика. Використовуються професійними цирковими артистами по всьому світу для найбільш видовищних виступів." data-en="The classic circus peg stilt — no foot platform, maximum height, pure acrobatics. Used by professional circus artists worldwide for the most dramatic performances.">Класичні циркові ходулі без платформи — максимальна висота, чиста акробатика. Використовуються професійними цирковими артистами по всьому світу для найбільш видовищних виступів.</p>
 
-  <h4>Specifications</h4>
+  <h4 data-ua="Характеристики" data-en="Specifications">Характеристики</h4>
   <ul style="list-style:none;margin:0.5rem 0 1rem;line-height:1.9;">
-    <li>— Height range: 60–150 cm above the ground</li>
-    <li>— Frame: welded steel, powder coated</li>
-    <li>— Max load: 200 kg</li>
-    <li>— Weight: 4.5 kg per pair</li>
-    <li>— Leather boot attachment system</li>
-    <li>— Non-slip rubber peg tips</li>
-    <li>— Custom height on request</li>
+    <li data-ua="— Висота: 60–150 см над землею" data-en="— Height range: 60–150 cm above the ground">— Висота: 60–150 см над землею</li>
+    <li data-ua="— Каркас: зварна сталь, порошкове покриття" data-en="— Frame: welded steel, powder coated">— Каркас: зварна сталь, порошкове покриття</li>
+    <li data-ua="— Максимальне навантаження: 200 кг" data-en="— Max load: 200 kg">— Максимальне навантаження: 200 кг</li>
+    <li data-ua="— Вага: 4,5 кг (пара)" data-en="— Weight: 4.5 kg per pair">— Вага: 4,5 кг (пара)</li>
+    <li data-ua="— Кріплення для шкіряних чобіт" data-en="— Leather boot attachment system">— Кріплення для шкіряних чобіт</li>
+    <li data-ua="— Нековзкі гумові наконечники" data-en="— Non-slip rubber peg tips">— Нековзкі гумові наконечники</li>
+    <li data-ua="— Індивідуальна висота на замовлення" data-en="— Custom height on request">— Індивідуальна висота на замовлення</li>
   </ul>
 
-  <h4>Important</h4>
-  <p>Peg stilts require prior experience with platform stilts. We recommend training before use.</p>
+  <h4 data-ua="Важливо" data-en="Important">Важливо</h4>
+  <p data-ua="Ходулі-колки потребують попереднього досвіду з платформними ходулями. Рекомендуємо пройти навчання перед використанням." data-en="Peg stilts require prior experience with platform stilts. We recommend training before use.">Ходулі-колки потребують попереднього досвіду з платформними ходулями. Рекомендуємо пройти навчання перед використанням.</p>
 
-  <h4>Includes</h4>
+  <h4 data-ua="Комплектація" data-en="Includes">Комплектація</h4>
   <ul style="list-style:none;margin:0.5rem 0 1rem;line-height:1.9;">
-    <li>— One pair of stilts</li>
-    <li>— Hard protective case</li>
-    <li>— Leather boot straps</li>
+    <li data-ua="— Пара ходуль" data-en="— One pair of stilts">— Пара ходуль</li>
+    <li data-ua="— Жорсткий захисний кейс" data-en="— Hard protective case">— Жорсткий захисний кейс</li>
+    <li data-ua="— Шкіряні ремені для чобіт" data-en="— Leather boot straps">— Шкіряні ремені для чобіт</li>
   </ul>
 
   <div class="details-footer">
     <span class="details-price">$420</span>
-    <a href="index.html#contact" class="btn" style="font-size:0.85rem;padding:0.7rem 1.5rem;">Order Now</a>
+    <a href="index.html#contact" class="btn" style="font-size:0.85rem;padding:0.7rem 1.5rem;" data-ua="Замовити" data-en="Order Now">Замовити</a>
   </div>
+
+  <script>
+    function setLang(lang) {
+      document.querySelectorAll('[data-ua]').forEach(el => { el.textContent = el.dataset[lang]; });
+      document.documentElement.lang = lang === 'ua' ? 'uk' : 'en';
+      document.getElementById('lang-toggle').textContent = lang === 'ua' ? 'EN' : 'UA';
+      localStorage.setItem('lang', lang);
+    }
+    const savedLang = localStorage.getItem('lang') || 'ua';
+    setLang(savedLang);
+    document.getElementById('lang-toggle').addEventListener('click', () => {
+      setLang((localStorage.getItem('lang') || 'ua') === 'ua' ? 'en' : 'ua');
+    });
+  </script>
 
 </body>
 </html>

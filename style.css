@@ -61,6 +61,32 @@ nav {
 
 .nav-links a:hover { opacity: 1; color: var(--accent); }
 
+/* Nav right group */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Language toggle */
+.lang-btn {
+  background: none;
+  border: 1px solid rgba(212,160,23,0.4);
+  color: var(--accent);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 0.3rem 0.7rem;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.lang-btn:hover {
+  background: var(--accent);
+  color: #000;
+}
+
 /* Burger */
 .burger {
   display: none;

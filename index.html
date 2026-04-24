@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dragon.Stilts — Circus Stilts for Performers</title>
+  <title>Dragon.Stilts — Циркові ходулі</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
@@ -14,14 +14,17 @@
   <nav>
     <a href="#hero" class="nav-logo">Dragon.Stilts</a>
     <ul class="nav-links">
-      <li><a href="#products">Products</a></li>
-      <li><a href="#why">Why Us</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#products" data-ua="Продукти" data-en="Products">Продукти</a></li>
+      <li><a href="#why" data-ua="Чому ми" data-en="Why Us">Чому ми</a></li>
+      <li><a href="#about" data-ua="Про нас" data-en="About">Про нас</a></li>
+      <li><a href="#contact" data-ua="Контакт" data-en="Contact">Контакт</a></li>
     </ul>
-    <button class="burger" aria-label="Menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="nav-right">
+      <button id="lang-toggle" class="lang-btn">EN</button>
+      <button class="burger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </nav>
 
   <!-- Hero -->
@@ -29,51 +32,54 @@
     <div class="hero-bg"></div>
     <div class="hero-lines"></div>
     <div class="hero-content">
-      <div class="hero-tag">Handcrafted Circus Stilts Equipment</div>
-      <h1 class="hero-title">Rise Above<br><span>the Crowd</span></h1>
-      <p class="hero-desc">Professional circus stilts for performers, street artists, and entertainers. Built for safety, comfort, and pure spectacle.</p>
-      <a href="#products" class="btn">Browse Stilts</a>
-      <a href="#contact" class="btn-outline">Get a Quote</a>
+      <div class="hero-tag" data-ua="Ходулі ручної роботи" data-en="Handcrafted Circus Stilts Equipment">Ходулі ручної роботи</div>
+      <h1 class="hero-title">
+        <span data-ua="Підніміться" data-en="Rise Above">Підніміться</span><br>
+        <span data-ua="над натовпом" data-en="the Crowd">над натовпом</span>
+      </h1>
+      <p class="hero-desc" data-ua="Професійні циркові ходулі для артистів, вуличних виконавців та аніматорів. Створені для безпеки, комфорту та видовища." data-en="Professional circus stilts for performers, street artists, and entertainers. Built for safety, comfort, and pure spectacle.">Професійні циркові ходулі для артистів, вуличних виконавців та аніматорів. Створені для безпеки, комфорту та видовища.</p>
+      <a href="#products" class="btn" data-ua="Переглянути" data-en="Browse Stilts">Переглянути</a>
+      <a href="#contact" class="btn-outline" data-ua="Запит ціни" data-en="Get a Quote">Запит ціни</a>
     </div>
   </section>
 
   <!-- Products -->
   <section id="products" class="fade-in">
     <div style="max-width:1100px; margin:0 auto;">
-      <p class="section-label">Our Products</p>
-      <h2 class="section-title">Choose Your Stilts</h2>
+      <p class="section-label" data-ua="Наші товари" data-en="Our Products">Наші товари</p>
+      <h2 class="section-title" data-ua="Оберіть ходулі" data-en="Choose Your Stilts">Оберіть ходулі</h2>
       <div class="products-grid">
 
-        <div class="product-card" onclick="window.open('junior.html','junior','_blank')">
+        <div class="product-card" onclick="window.open('junior.html','_blank')">
           <div class="product-card-img">🎪</div>
           <div class="product-card-body">
-            <p class="product-card-tag">Beginner</p>
+            <p class="product-card-tag" data-ua="Початківець" data-en="Beginner">Початківець</p>
             <h3 class="product-card-name">Junior Stilts</h3>
-            <p class="product-card-desc">Perfect for beginners and younger performers. Adjustable height, padded foot rests, lightweight aluminum frame.</p>
-            <p class="product-card-price">from $280</p>
-            <span class="product-card-link">View details →</span>
+            <p class="product-card-desc" data-ua="Ідеально для початківців. Регульована висота, м'які підставки для ніг, легка алюмінієва рама." data-en="Perfect for beginners and younger performers. Adjustable height, padded foot rests, lightweight aluminum frame.">Ідеально для початківців. Регульована висота, м'які підставки для ніг, легка алюмінієва рама.</p>
+            <p class="product-card-price">від $280</p>
+            <span class="product-card-link" data-ua="Детальніше →" data-en="View details →">Детальніше →</span>
           </div>
         </div>
 
-        <div class="product-card" onclick="window.open('pro.html','pro','_blank')">
+        <div class="product-card" onclick="window.open('pro.html','_blank')">
           <div class="product-card-img">⭐</div>
           <div class="product-card-body">
-            <p class="product-card-tag">Professional</p>
+            <p class="product-card-tag" data-ua="Професійний" data-en="Professional">Професійний</p>
             <h3 class="product-card-name">Pro Stage Stilts</h3>
-            <p class="product-card-desc">Built for demanding performances. High-load steel core, quick-release buckles, ergonomic ankle support system.</p>
-            <p class="product-card-price">from $320</p>
-            <span class="product-card-link">View details →</span>
+            <p class="product-card-desc" data-ua="Для вибагливих виступів. Сталевий каркас, швидкорознімні застібки, ергономічна підтримка гомілки." data-en="Built for demanding performances. High-load steel core, quick-release buckles, ergonomic ankle support system.">Для вибагливих виступів. Сталевий каркас, швидкорознімні застібки, ергономічна підтримка гомілки.</p>
+            <p class="product-card-price">від $320</p>
+            <span class="product-card-link" data-ua="Детальніше →" data-en="View details →">Детальніше →</span>
           </div>
         </div>
 
-        <div class="product-card" onclick="window.open('peg.html','peg','_blank')">
+        <div class="product-card" onclick="window.open('peg.html','_blank')">
           <div class="product-card-img">🎭</div>
           <div class="product-card-body">
-            <p class="product-card-tag">Classic Circus</p>
+            <p class="product-card-tag" data-ua="Класичний цирк" data-en="Classic Circus">Класичний цирк</p>
             <h3 class="product-card-name">Peg Stilts</h3>
-            <p class="product-card-desc">Traditional circus peg stilts for acrobatic acts. Maximum height, welded steel construction, non-slip grips.</p>
-            <p class="product-card-price">from $420</p>
-            <span class="product-card-link">View details →</span>
+            <p class="product-card-desc" data-ua="Традиційні циркові ходулі для акробатичних номерів. Максимальна висота, зварна сталь, нековзкі захвати." data-en="Traditional circus peg stilts for acrobatic acts. Maximum height, welded steel construction, non-slip grips.">Традиційні циркові ходулі для акробатичних номерів. Максимальна висота, зварна сталь, нековзкі захвати.</p>
+            <p class="product-card-price">від $420</p>
+            <span class="product-card-link" data-ua="Детальніше →" data-en="View details →">Детальніше →</span>
           </div>
         </div>
 
@@ -81,167 +87,30 @@
     </div>
   </section>
 
-  <!-- Modal: Junior Stilts -->
-  <div class="modal-overlay" id="modal-junior">
-    <div class="modal-box">
-      <button class="modal-close" aria-label="Close">&times;</button>
-      <h2 class="modal-title">Junior Stilts</h2>
-      <p class="product-card-tag" style="margin-bottom:1rem;">Beginner</p>
-
-      <div class="modal-images">
-        <img src="Gallery/stilts01.jpg" alt="Junior Stilts" class="modal-img-thumb" />
-      </div>
-
-      <p>Designed for beginners and younger performers. Lightweight, stable, and easy to adjust — a safe first step into stilt walking.</p>
-
-      <h4>Specifications</h4>
-      <ul>
-        <li>Height range: 30–60 cm above the ground</li>
-        <li>Material: aluminum + steel</li>
-        <li>Weight: 3600 g per pair (2 stilts)</li>
-        <li>Max load: 80 kg</li>
-        <li>Padded foot rests with velcro straps</li>
-        <li>Rubber non-slip foot caps</li>
-        <li>Ages 13+ recommended</li>
-      </ul>
-
-      <h4>Configure Your Stilts</h4>
-      <div class="dropdowns-row">
-        <div class="dropdown-group">
-          <label class="dropdown-label" for="junior-height">Stilt Height</label>
-          <select class="height-select" id="junior-height" data-price="0">
-            <option value="0">30–50 cm</option>
-            <option value="40">60–90 cm (+$40)</option>
-          </select>
-        </div>
-        <div class="dropdown-group">
-          <label class="dropdown-label" for="junior-upper">Upper Part Height</label>
-          <select class="height-select" id="junior-upper" data-price="0">
-            <option value="0">30–40 cm</option>
-            <option value="10">20–30 cm (+$10)</option>
-            <option value="20">40–50 cm (+$20)</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="modal-images" style="margin-top:1.2rem;">
-        <img src="Gallery/stilts02.jpg" alt="Junior Stilts detail" class="modal-img-thumb" />
-        <img src="Gallery/stilts03.jpg" alt="Junior Stilts side" class="modal-img-thumb" />
-      </div>
-
-      <h4>Includes</h4>
-      <ul>
-        <li>One pair of stilts</li>
-        <li>The bag is included</li>
-        <li>Quick-start guide</li>
-      </ul>
-
-      <h4>Technical Documentation</h4>
-      <a href="Ergo Tripod Dragon.Kinbaku 2026_04_13.pdf" download class="btn" style="display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:1.5rem;">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Download Technical Documentation
-      </a>
-
-      <div class="details-footer">
-        <span class="details-price" id="junior-price">$280</span>
-        <a href="#contact" class="btn" style="font-size:0.85rem; padding:0.7rem 1.5rem;">Order Now</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal: Pro Stage Stilts -->
-  <div class="modal-overlay" id="modal-pro">
-    <div class="modal-box">
-      <button class="modal-close" aria-label="Close">&times;</button>
-      <h2 class="modal-title">Pro Stage Stilts</h2>
-      <p class="product-card-tag" style="margin-bottom:1rem;">Professional</p>
-      <p>Built for demanding stage and street performances. The Pro Stage Stilts combine industrial-strength construction with ergonomic comfort for long-duration wear.</p>
-      <h4>Specifications</h4>
-      <ul>
-        <li>Height range: 40–90 cm above the ground</li>
-        <li>Frame: steel core with aluminum shell</li>
-        <li>Max load: 160 kg</li>
-        <li>Weight: 3.2 kg per pair</li>
-        <li>Quick-release 3-buckle system</li>
-        <li>Molded EVA foam ankle support</li>
-        <li>Replaceable rubber foot pads</li>
-      </ul>
-      <h4>Includes</h4>
-      <ul>
-        <li>One pair of stilts</li>
-        <li>Hard protective case</li>
-        <li>Spare buckle set</li>
-        <li>Spare foot pads</li>
-      </ul>
-      <div class="details-footer">
-        <span class="details-price">from $320</span>
-        <a href="#contact" class="btn" style="font-size:0.85rem; padding:0.7rem 1.5rem;">Order Now</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal: Peg Stilts -->
-  <div class="modal-overlay" id="modal-peg">
-    <div class="modal-box">
-      <button class="modal-close" aria-label="Close">&times;</button>
-      <h2 class="modal-title">Peg Stilts</h2>
-      <p class="product-card-tag" style="margin-bottom:1rem;">Classic Circus</p>
-      <p>The classic circus peg stilt — no foot platform, maximum height, pure acrobatics. Used by professional circus artists worldwide for the most dramatic performances.</p>
-      <h4>Specifications</h4>
-      <ul>
-        <li>Height range: 60–150 cm above the ground</li>
-        <li>Frame: welded steel, powder coated</li>
-        <li>Max load: 200 kg</li>
-        <li>Weight: 4.5 kg per pair</li>
-        <li>Leather boot attachment system</li>
-        <li>Non-slip rubber peg tips</li>
-        <li>Custom height on request</li>
-      </ul>
-      <h4>Important</h4>
-      <p>Peg stilts require prior experience with platform stilts. We recommend training before use.</p>
-      <h4>Includes</h4>
-      <ul>
-        <li>One pair of stilts</li>
-        <li>Hard protective case</li>
-        <li>Leather boot straps</li>
-      </ul>
-      <div class="details-footer">
-        <span class="details-price">from $420</span>
-        <a href="#contact" class="btn" style="font-size:0.85rem; padding:0.7rem 1.5rem;">Order Now</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Lightbox for image zoom -->
-  <div class="lightbox" id="lightbox">
-    <button class="lightbox-close" aria-label="Close">&times;</button>
-    <img id="lightbox-img" src="" alt="" />
-  </div>
-
   <!-- Why Us -->
   <section id="why" class="fade-in">
-    <p class="section-label">Why Dragon.Stilts</p>
-    <h2 class="section-title">Built Different</h2>
+    <p class="section-label" data-ua="Чому Dragon.Stilts" data-en="Why Dragon.Stilts">Чому Dragon.Stilts</p>
+    <h2 class="section-title" data-ua="Інший підхід" data-en="Built Different">Інший підхід</h2>
     <div class="why-grid">
       <div class="why-item">
         <div class="why-icon">🔩</div>
-        <h3 class="why-title">Handcrafted Quality</h3>
-        <p class="why-desc">Every pair is built by hand by experienced craftsmen. No mass production — only precision and care.</p>
+        <h3 class="why-title" data-ua="Якість ручної роботи" data-en="Handcrafted Quality">Якість ручної роботи</h3>
+        <p class="why-desc" data-ua="Кожна пара виготовляється вручну досвідченими майстрами. Без масового виробництва — лише точність і турбота." data-en="Every pair is built by hand by experienced craftsmen. No mass production — only precision and care.">Кожна пара виготовляється вручну досвідченими майстрами. Без масового виробництва — лише точність і турбота.</p>
       </div>
       <div class="why-item">
         <div class="why-icon">🛡️</div>
-        <h3 class="why-title">Safety First</h3>
-        <p class="why-desc">All models tested to 200 kg load. Triple-locking buckle system. Used by professional circus troupes worldwide.</p>
+        <h3 class="why-title" data-ua="Безпека перш за все" data-en="Safety First">Безпека перш за все</h3>
+        <p class="why-desc" data-ua="Всі моделі протестовані на навантаження 200 кг. Потрійна система блокування. Використовується цирковими трупами по всьому світу." data-en="All models tested to 200 kg load. Triple-locking buckle system. Used by professional circus troupes worldwide.">Всі моделі протестовані на навантаження 200 кг. Потрійна система блокування. Використовується цирковими трупами по всьому світу.</p>
       </div>
       <div class="why-item">
         <div class="why-icon">📐</div>
-        <h3 class="why-title">Custom Sizes</h3>
-        <p class="why-desc">We build to your exact measurements. Custom height, color, and branding available for every model.</p>
+        <h3 class="why-title" data-ua="Індивідуальні розміри" data-en="Custom Sizes">Індивідуальні розміри</h3>
+        <p class="why-desc" data-ua="Виготовляємо під ваші точні виміри. Індивідуальна висота, колір та брендування для кожної моделі." data-en="We build to your exact measurements. Custom height, color, and branding available for every model.">Виготовляємо під ваші точні виміри. Індивідуальна висота, колір та брендування для кожної моделі.</p>
       </div>
       <div class="why-item">
         <div class="why-icon">🚀</div>
-        <h3 class="why-title">Fast Worldwide Shipping</h3>
-        <p class="why-desc">Shipped to 40+ countries. Sturdy protective carry case included with every order.</p>
+        <h3 class="why-title" data-ua="Швидка доставка" data-en="Fast Worldwide Shipping">Швидка доставка</h3>
+        <p class="why-desc" data-ua="Доставка в 40+ країн. До кожного замовлення додається міцний захисний кейс." data-en="Shipped to 40+ countries. Sturdy protective carry case included with every order.">Доставка в 40+ країн. До кожного замовлення додається міцний захисний кейс.</p>
       </div>
     </div>
   </section>
@@ -249,38 +118,29 @@
   <!-- About -->
   <section id="about" class="fade-in">
     <div class="about-inner">
-      <p class="section-label">About Us</p>
-      <h2 class="section-title">The Dragon.Stilts Story</h2>
-      <p>We started Dragon.Stilts in 2024 with a simple idea: performers deserve equipment that keeps up with their art. After years of building stilts in our workshop for local circus troupes, demand grew — and so did we.</p>
-      <p>Today we supply performers, theater companies, event agencies, and street artists across Europe and beyond. Every pair of stilts leaves our workshop tested, adjusted, and ready to perform.</p>
+      <p class="section-label" data-ua="Про нас" data-en="About Us">Про нас</p>
+      <h2 class="section-title" data-ua="Історія Dragon.Stilts" data-en="The Dragon.Stilts Story">Історія Dragon.Stilts</h2>
+      <p data-ua="Ми заснували Dragon.Stilts у 2024 році з простою ідеєю: артисти заслуговують на обладнання, яке відповідає їхньому мистецтву. Після років виготовлення ходуль у нашій майстерні для місцевих циркових труп, попит виріс — і ми разом з ним." data-en="We started Dragon.Stilts in 2024 with a simple idea: performers deserve equipment that keeps up with their art. After years of building stilts in our workshop for local circus troupes, demand grew — and so did we.">Ми заснували Dragon.Stilts у 2024 році з простою ідеєю: артисти заслуговують на обладнання, яке відповідає їхньому мистецтву. Після років виготовлення ходуль у нашій майстерні для місцевих циркових труп, попит виріс — і ми разом з ним.</p>
+      <p data-ua="Сьогодні ми постачаємо ходулі артистам, театральним компаніям, event-агентствам та вуличним виконавцям по всій Європі та за її межами. Кожна пара залишає нашу майстерню протестованою, відрегульованою та готовою до виступу." data-en="Today we supply performers, theater companies, event agencies, and street artists across Europe and beyond. Every pair of stilts leaves our workshop tested, adjusted, and ready to perform.">Сьогодні ми постачаємо ходулі артистам, театральним компаніям, event-агентствам та вуличним виконавцям по всій Європі та за її межами. Кожна пара залишає нашу майстерню протестованою, відрегульованою та готовою до виступу.</p>
     </div>
   </section>
 
   <!-- Contact -->
   <section id="contact" class="fade-in">
-    <p class="section-label">Get in Touch</p>
-    <h2 class="section-title">Contact</h2>
-    <p class="contact-desc">Want to order, ask a question, or get a custom quote? We're happy to hear from you.</p>
+    <p class="section-label" data-ua="Зв'яжіться з нами" data-en="Get in Touch">Зв'яжіться з нами</p>
+    <h2 class="section-title" data-ua="Контакт" data-en="Contact">Контакт</h2>
+    <p class="contact-desc" data-ua="Хочете замовити, задати питання або отримати індивідуальну ціну? Ми завжди раді вас почути." data-en="Want to order, ask a question, or get a custom quote? We're happy to hear from you.">Хочете замовити, задати питання або отримати індивідуальну ціну? Ми завжди раді вас почути.</p>
     <div class="contact-links">
       <a href="mailto:dragon.spiritus@gmail.com" class="contact-link">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <rect x="2" y="4" width="20" height="16" rx="2"/>
-          <polyline points="2,4 12,13 22,4"/>
-        </svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
         dragon.spiritus@gmail.com
       </a>
       <a href="https://instagram.com/dragon.spiritus" target="_blank" class="contact-link">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-          <circle cx="12" cy="12" r="4"/>
-          <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
-        </svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
         @dragon.spiritus
       </a>
       <a href="https://wa.me/380937677311" target="_blank" class="contact-link">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
-        </svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
         WhatsApp: +380 93 767 7311
       </a>
     </div>
@@ -288,7 +148,7 @@
 
   <!-- Footer -->
   <footer>
-    <p>© 2026 Dragon.Stilts. All rights reserved.</p>
+    <p><span data-ua="© 2026 Dragon.Stilts. Всі права захищені." data-en="© 2026 Dragon.Stilts. All rights reserved.">© 2026 Dragon.Stilts. Всі права захищені.</span></p>
   </footer>
 
   <script>
@@ -314,65 +174,22 @@
     }, { threshold: 0.05 });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-    // Modal open
-    document.querySelectorAll('.product-card-link[data-modal]').forEach(link => {
-      link.addEventListener('click', e => {
-        e.preventDefault();
-        const modal = document.getElementById('modal-' + link.dataset.modal);
-        if (modal) {
-          modal.classList.add('open');
-          document.body.style.overflow = 'hidden';
-        }
+    // Language switcher
+    function setLang(lang) {
+      document.querySelectorAll('[data-ua]').forEach(el => {
+        el.textContent = el.dataset[lang];
       });
-    });
-
-    // Modal close
-    function closeAllModals() {
-      document.querySelectorAll('.modal-overlay').forEach(m => m.classList.remove('open'));
-      document.body.style.overflow = '';
+      document.documentElement.lang = lang === 'ua' ? 'uk' : 'en';
+      document.getElementById('lang-toggle').textContent = lang === 'ua' ? 'EN' : 'UA';
+      localStorage.setItem('lang', lang);
     }
-    document.querySelectorAll('.modal-close').forEach(btn => {
-      btn.addEventListener('click', closeAllModals);
-    });
-    document.querySelectorAll('.modal-overlay').forEach(overlay => {
-      overlay.addEventListener('click', e => {
-        if (e.target === overlay) closeAllModals();
-      });
-    });
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') closeAllModals();
-    });
 
-    // Close modal when clicking Order Now
-    document.querySelectorAll('.modal-box .btn[href="#contact"]').forEach(btn => {
-      btn.addEventListener('click', closeAllModals);
-    });
+    const savedLang = localStorage.getItem('lang') || 'ua';
+    setLang(savedLang);
 
-    // Junior Stilts price calculator
-    const BASE_PRICE = 280;
-    function updateJuniorPrice() {
-      const h = parseInt(document.getElementById('junior-height').value) || 0;
-      const u = parseInt(document.getElementById('junior-upper').value) || 0;
-      document.getElementById('junior-price').textContent = '$' + (BASE_PRICE + h + u);
-    }
-    document.getElementById('junior-height').addEventListener('change', updateJuniorPrice);
-    document.getElementById('junior-upper').addEventListener('change', updateJuniorPrice);
-
-    // Lightbox for images
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    document.querySelectorAll('.modal-img-thumb').forEach(img => {
-      img.addEventListener('click', () => {
-        lightboxImg.src = img.src;
-        lightboxImg.alt = img.alt;
-        lightbox.classList.add('open');
-      });
-    });
-    document.querySelector('.lightbox-close').addEventListener('click', () => {
-      lightbox.classList.remove('open');
-    });
-    lightbox.addEventListener('click', e => {
-      if (e.target === lightbox) lightbox.classList.remove('open');
+    document.getElementById('lang-toggle').addEventListener('click', () => {
+      const current = localStorage.getItem('lang') || 'ua';
+      setLang(current === 'ua' ? 'en' : 'ua');
     });
   </script>
 

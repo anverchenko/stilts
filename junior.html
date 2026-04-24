@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,50 +12,54 @@
     .product-page-back { display:inline-flex; align-items:center; gap:0.5rem; color:var(--gray); text-decoration:none; font-size:0.9rem; margin-bottom:2rem; transition:color 0.2s; }
     .product-page-back:hover { color:var(--accent); }
     .product-page-back svg { width:16px; height:16px; }
+    .page-header { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:1rem; margin-bottom:1.2rem; }
   </style>
 </head>
 <body>
 
-  <a href="javascript:window.close()" class="product-page-back">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
-    Back
-  </a>
+  <div class="page-header">
+    <a href="javascript:window.close()" class="product-page-back">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+      <span data-ua="Назад" data-en="Back">Назад</span>
+    </a>
+    <button id="lang-toggle" class="lang-btn">EN</button>
+  </div>
 
-  <p class="product-card-tag">Beginner</p>
+  <p class="product-card-tag" data-ua="Початківець" data-en="Beginner">Початківець</p>
   <h1 style="font-family:var(--font-serif);font-size:2rem;color:var(--text);margin:0.3rem 0 1.2rem;">Junior Stilts</h1>
 
   <div class="modal-images">
     <img src="Gallery/stilts01.jpg" alt="Junior Stilts" class="modal-img-thumb" />
   </div>
 
-  <p>Designed for beginners and younger performers. Lightweight, stable, and easy to adjust — a safe first step into stilt walking.</p>
+  <p data-ua="Розроблені для початківців та молодих артистів. Легкі, стабільні та прості в налаштуванні — безпечний перший крок у ходьбі на ходулях." data-en="Designed for beginners and younger performers. Lightweight, stable, and easy to adjust — a safe first step into stilt walking.">Розроблені для початківців та молодих артистів. Легкі, стабільні та прості в налаштуванні — безпечний перший крок у ходьбі на ходулях.</p>
 
-  <h4>Specifications</h4>
+  <h4 data-ua="Характеристики" data-en="Specifications">Характеристики</h4>
   <ul style="list-style:none;margin:0.5rem 0 1rem;line-height:1.9;">
-    <li>— Height range: 30–60 cm above the ground</li>
-    <li>— Material: aluminum + steel</li>
-    <li>— Weight: 3600 g per pair (2 stilts)</li>
-    <li>— Max load: 80 kg</li>
-    <li>— Padded foot rests with velcro straps</li>
-    <li>— Rubber non-slip foot caps</li>
-    <li>— Ages 13+ recommended</li>
+    <li data-ua="— Висота: 30–60 см над землею" data-en="— Height range: 30–60 cm above the ground">— Висота: 30–60 см над землею</li>
+    <li data-ua="— Матеріал: алюміній + сталь" data-en="— Material: aluminum + steel">— Матеріал: алюміній + сталь</li>
+    <li data-ua="— Вага: 3600 г (пара, 2 ходулі)" data-en="— Weight: 3600 g per pair (2 stilts)">— Вага: 3600 г (пара, 2 ходулі)</li>
+    <li data-ua="— Максимальне навантаження: 80 кг" data-en="— Max load: 80 kg">— Максимальне навантаження: 80 кг</li>
+    <li data-ua="— М'які підставки для ніг з велкро" data-en="— Padded foot rests with velcro straps">— М'які підставки для ніг з велкро</li>
+    <li data-ua="— Гумові нековзкі ковпачки" data-en="— Rubber non-slip foot caps">— Гумові нековзкі ковпачки</li>
+    <li data-ua="— Рекомендовано від 13 років" data-en="— Ages 13+ recommended">— Рекомендовано від 13 років</li>
   </ul>
 
-  <h4>Configure Your Stilts</h4>
+  <h4 data-ua="Налаштуйте ходулі" data-en="Configure Your Stilts">Налаштуйте ходулі</h4>
   <div class="dropdowns-row">
     <div class="dropdown-group">
-      <label class="dropdown-label" for="junior-height">Stilt Height</label>
+      <label class="dropdown-label" for="junior-height" data-ua="Висота ходуль" data-en="Stilt Height">Висота ходуль</label>
       <select class="height-select" id="junior-height">
-        <option value="0">30–50 cm</option>
-        <option value="40">60–90 cm (+$40)</option>
+        <option value="0" data-ua="30–50 см" data-en="30–50 cm">30–50 см</option>
+        <option value="40" data-ua="60–90 см (+$40)" data-en="60–90 cm (+$40)">60–90 см (+$40)</option>
       </select>
     </div>
     <div class="dropdown-group">
-      <label class="dropdown-label" for="junior-upper">Upper Part Height</label>
+      <label class="dropdown-label" for="junior-upper" data-ua="Висота верхньої частини" data-en="Upper Part Height">Висота верхньої частини</label>
       <select class="height-select" id="junior-upper">
-        <option value="0">30–40 cm</option>
-        <option value="10">20–30 cm (+$10)</option>
-        <option value="20">40–50 cm (+$20)</option>
+        <option value="0" data-ua="30–40 см" data-en="30–40 cm">30–40 см</option>
+        <option value="10" data-ua="20–30 см (+$10)" data-en="20–30 cm (+$10)">20–30 см (+$10)</option>
+        <option value="20" data-ua="40–50 см (+$20)" data-en="40–50 cm (+$20)">40–50 см (+$20)</option>
       </select>
     </div>
   </div>
@@ -65,22 +69,22 @@
     <img src="Gallery/stilts03.jpg" alt="Junior Stilts side" class="modal-img-thumb" />
   </div>
 
-  <h4>Includes</h4>
+  <h4 data-ua="Комплектація" data-en="Includes">Комплектація</h4>
   <ul style="list-style:none;margin:0.5rem 0 1rem;line-height:1.9;">
-    <li>— One pair of stilts</li>
-    <li>— The bag is included</li>
-    <li>— Quick-start guide</li>
+    <li data-ua="— Пара ходуль" data-en="— One pair of stilts">— Пара ходуль</li>
+    <li data-ua="— Сумка в комплекті" data-en="— The bag is included">— Сумка в комплекті</li>
+    <li data-ua="— Короткий посібник" data-en="— Quick-start guide">— Короткий посібник</li>
   </ul>
 
-  <h4>Technical Documentation</h4>
+  <h4 data-ua="Технічна документація" data-en="Technical Documentation">Технічна документація</h4>
   <a href="Ergo Tripod Dragon.Kinbaku 2026_04_13.pdf" download class="btn" style="display:inline-flex;align-items:center;gap:0.5rem;margin-bottom:2rem;">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-    Download Technical Documentation
+    <span data-ua="Завантажити документацію" data-en="Download Technical Documentation">Завантажити документацію</span>
   </a>
 
   <div class="details-footer">
     <span class="details-price" id="junior-price">$280</span>
-    <a href="index.html#contact" class="btn" style="font-size:0.85rem;padding:0.7rem 1.5rem;">Order Now</a>
+    <a href="index.html#contact" class="btn" style="font-size:0.85rem;padding:0.7rem 1.5rem;" data-ua="Замовити" data-en="Order Now">Замовити</a>
   </div>
 
   <!-- Lightbox -->
@@ -90,6 +94,25 @@
   </div>
 
   <script>
+    // Language (sync with main page)
+    function setLang(lang) {
+      document.querySelectorAll('[data-ua]').forEach(el => {
+        if (el.tagName === 'OPTION') {
+          el.textContent = el.dataset[lang];
+        } else {
+          el.textContent = el.dataset[lang];
+        }
+      });
+      document.documentElement.lang = lang === 'ua' ? 'uk' : 'en';
+      document.getElementById('lang-toggle').textContent = lang === 'ua' ? 'EN' : 'UA';
+      localStorage.setItem('lang', lang);
+    }
+    const savedLang = localStorage.getItem('lang') || 'ua';
+    setLang(savedLang);
+    document.getElementById('lang-toggle').addEventListener('click', () => {
+      setLang((localStorage.getItem('lang') || 'ua') === 'ua' ? 'en' : 'ua');
+    });
+
     // Price calculator
     const BASE = 280;
     function updatePrice() {
@@ -104,10 +127,7 @@
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     document.querySelectorAll('.modal-img-thumb').forEach(img => {
-      img.addEventListener('click', () => {
-        lightboxImg.src = img.src;
-        lightbox.classList.add('open');
-      });
+      img.addEventListener('click', () => { lightboxImg.src = img.src; lightbox.classList.add('open'); });
     });
     document.querySelector('.lightbox-close').addEventListener('click', () => lightbox.classList.remove('open'));
     lightbox.addEventListener('click', e => { if (e.target === lightbox) lightbox.classList.remove('open'); });
