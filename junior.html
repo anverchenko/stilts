@@ -40,7 +40,7 @@
     <li data-ua="— Матеріал: алюміній + сталь" data-en="— Material: aluminum + steel">— Матеріал: алюміній + сталь</li>
     <li data-ua="— Вага: 3600 г (пара, 2 ходулі)" data-en="— Weight: 3600 g per pair (2 stilts)">— Вага: 3600 г (пара, 2 ходулі)</li>
     <li data-ua="— Максимальне навантаження: 80 кг" data-en="— Max load: 80 kg">— Максимальне навантаження: 80 кг</li>
-    <li data-ua="— М'які підставки для ніг з велкро" data-en="— Padded foot rests with velcro straps">— М'які підставки для ніг з велкро</li>
+    <li data-ua="— Сталеві підставки для ніг з кліпсовим кріпленням" data-en="— Steel foot rests with a clip fastening system">— Сталеві підставки для ніг з кліпсовим кріпленням</li>
     <li data-ua="— Гумові нековзкі ковпачки" data-en="— Rubber non-slip foot caps">— Гумові нековзкі ковпачки</li>
     <li data-ua="— Рекомендовано від 13 років" data-en="— Ages 13+ recommended">— Рекомендовано від 13 років</li>
   </ul>
@@ -50,16 +50,16 @@
     <div class="dropdown-group">
       <label class="dropdown-label" for="junior-height" data-ua="Висота ходуль" data-en="Stilt Height">Висота ходуль</label>
       <select class="height-select" id="junior-height">
-        <option value="0" data-ua="30–50 см" data-en="30–50 cm">30–50 см</option>
-        <option value="40" data-ua="60–90 см (+$40)" data-en="60–90 cm (+$40)">60–90 см (+$40)</option>
+        <option value="0" data-ua="30–50 см. Вага 1600 г (1 шт.)" data-en="30–50 cm. Weight 1600 g (each)">30–50 см. Вага 1600 г (1 шт.)</option>
+        <option value="20" data-ua="50–90 см. Вага 1800 г (1 шт.) (+$20)" data-en="50–90 cm. Weight 1800 g (each) (+$20)">50–90 см. Вага 1800 г (1 шт.) (+$20)</option>
       </select>
     </div>
     <div class="dropdown-group">
       <label class="dropdown-label" for="junior-upper" data-ua="Висота верхньої частини" data-en="Upper Part Height">Висота верхньої частини</label>
       <select class="height-select" id="junior-upper">
         <option value="0" data-ua="30–40 см" data-en="30–40 cm">30–40 см</option>
-        <option value="10" data-ua="20–30 см (+$10)" data-en="20–30 cm (+$10)">20–30 см (+$10)</option>
-        <option value="20" data-ua="40–50 см (+$20)" data-en="40–50 cm (+$20)">40–50 см (+$20)</option>
+        <option value="0" data-ua="20–30 см" data-en="20–30 cm">20–30 см</option>
+        <option value="0" data-ua="40–50 см" data-en="40–50 cm">40–50 см</option>
       </select>
     </div>
   </div>
@@ -83,7 +83,7 @@
   </a>
 
   <div class="details-footer">
-    <span class="details-price" id="junior-price">$280</span>
+    <span class="details-price" id="junior-price">$350</span>
     <a href="index.html#contact" class="btn" style="font-size:0.85rem;padding:0.7rem 1.5rem;" data-ua="Замовити" data-en="Order Now">Замовити</a>
   </div>
 
@@ -114,7 +114,7 @@
     });
 
     // Price calculator
-    const BASE = 280;
+    const BASE = 350;
     function updatePrice() {
       const h = parseInt(document.getElementById('junior-height').value) || 0;
       const u = parseInt(document.getElementById('junior-upper').value) || 0;
