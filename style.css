@@ -572,6 +572,15 @@ section { padding: 6rem 2rem; }
   font-family: var(--font-serif);
 }
 
+.product-card--disabled {
+  opacity: 0.45;
+  cursor: default;
+  pointer-events: none;
+}
+.coming-soon {
+  color: var(--gray) !important;
+}
+
 /* === Main Page Gallery === */
 .main-gallery {
   max-width: 700px;
