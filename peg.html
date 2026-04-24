@@ -28,6 +28,19 @@
   <p class="product-card-tag" data-ua="Класичний цирк" data-en="Classic Circus">Класичний цирк</p>
   <h1 style="font-family:var(--font-serif);font-size:2rem;color:var(--text);margin:0.3rem 0 1.2rem;">Peg Stilts</h1>
 
+  <div class="gallery">
+    <div class="gallery-main">
+      <button class="gallery-arrow gallery-prev" aria-label="Prev">&#8249;</button>
+      <img class="gallery-main-img" id="gallery-main-img" src="Gallery/stilts01.jpg" alt="Peg Stilts" />
+      <button class="gallery-arrow gallery-next" aria-label="Next">&#8250;</button>
+    </div>
+    <div class="gallery-thumbs">
+      <img class="gallery-thumb active" src="Gallery/stilts01.jpg" alt="" data-index="0" />
+      <img class="gallery-thumb" src="Gallery/stilts02.jpg" alt="" data-index="1" />
+      <img class="gallery-thumb" src="Gallery/stilts03.jpg" alt="" data-index="2" />
+    </div>
+  </div>
+
   <p data-ua="Класичні циркові ходулі без платформи — максимальна висота, чиста акробатика. Використовуються професійними цирковими артистами по всьому світу для найбільш видовищних виступів." data-en="The classic circus peg stilt — no foot platform, maximum height, pure acrobatics. Used by professional circus artists worldwide for the most dramatic performances.">Класичні циркові ходулі без платформи — максимальна висота, чиста акробатика. Використовуються професійними цирковими артистами по всьому світу для найбільш видовищних виступів.</p>
 
   <h4 data-ua="Характеристики" data-en="Specifications">Характеристики</h4>
@@ -56,6 +69,11 @@
     <a href="index.html#contact" class="btn" style="font-size:0.85rem;padding:0.7rem 1.5rem;" data-ua="Замовити" data-en="Order Now">Замовити</a>
   </div>
 
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close">&times;</button>
+    <img id="lightbox-img" src="" alt="" />
+  </div>
+
   <script>
     function setLang(lang) {
       document.querySelectorAll('[data-ua]').forEach(el => { el.textContent = el.dataset[lang]; });
@@ -68,6 +86,28 @@
     document.getElementById('lang-toggle').addEventListener('click', () => {
       setLang((localStorage.getItem('lang') || 'ua') === 'ua' ? 'en' : 'ua');
     });
+
+    // Gallery
+    const thumbs = [...document.querySelectorAll('.gallery-thumb')];
+    const mainImg = document.getElementById('gallery-main-img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    let current = 0;
+
+    function showSlide(idx) {
+      current = (idx + thumbs.length) % thumbs.length;
+      mainImg.src = thumbs[current].src;
+      thumbs.forEach((t, i) => t.classList.toggle('active', i === current));
+      thumbs[current].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    }
+
+    thumbs.forEach((t, i) => t.addEventListener('click', () => showSlide(i)));
+    document.querySelector('.gallery-prev').addEventListener('click', () => showSlide(current - 1));
+    document.querySelector('.gallery-next').addEventListener('click', () => showSlide(current + 1));
+
+    mainImg.addEventListener('click', () => { lightboxImg.src = mainImg.src; lightbox.classList.add('open'); });
+    document.querySelector('.lightbox-close').addEventListener('click', () => lightbox.classList.remove('open'));
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) lightbox.classList.remove('open'); });
   </script>
 
 </body>
