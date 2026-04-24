@@ -454,6 +454,26 @@ section { padding: 6rem 2rem; }
   transform: scale(1.03);
 }
 
+/* Dropdowns row */
+.dropdowns-row {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  margin: 0.5rem 0 1.2rem;
+}
+.dropdown-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex: 1;
+  min-width: 160px;
+}
+.dropdown-label {
+  font-size: 0.82rem;
+  color: var(--gray);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
 /* Height dropdown */
 .height-select-wrap {
   margin: 0.5rem 0 1.2rem;

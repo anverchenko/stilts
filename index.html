@@ -90,8 +90,6 @@
 
       <div class="modal-images">
         <img src="Gallery/stilts01.jpg" alt="Junior Stilts" class="modal-img-thumb" />
-        <img src="Gallery/stilts02.jpg" alt="Junior Stilts detail" class="modal-img-thumb" />
-        <img src="Gallery/stilts03.jpg" alt="Junior Stilts side" class="modal-img-thumb" />
       </div>
 
       <p>Designed for beginners and younger performers. Lightweight, stable, and easy to adjust — a safe first step into stilt walking.</p>
@@ -101,23 +99,34 @@
         <li>Height range: 30–60 cm above the ground</li>
         <li>Material: aluminum + steel</li>
         <li>Weight: 3600 g per pair (2 stilts)</li>
-        <li>Max load: 100 kg</li>
+        <li>Max load: 80 kg</li>
         <li>Padded foot rests with velcro straps</li>
         <li>Rubber non-slip foot caps</li>
-        <li>Ages 8+ recommended</li>
+        <li>Ages 13+ recommended</li>
       </ul>
 
-      <h4>Stilt Height</h4>
-      <div class="height-select-wrap">
-        <select class="height-select" id="junior-height">
-          <option value="30">30 cm</option>
-          <option value="35">35 cm</option>
-          <option value="40">40 cm</option>
-          <option value="45">45 cm</option>
-          <option value="50" selected>50 cm</option>
-          <option value="55">55 cm</option>
-          <option value="60">60 cm</option>
-        </select>
+      <h4>Configure Your Stilts</h4>
+      <div class="dropdowns-row">
+        <div class="dropdown-group">
+          <label class="dropdown-label" for="junior-height">Stilt Height</label>
+          <select class="height-select" id="junior-height" data-price="0">
+            <option value="0">30–50 cm</option>
+            <option value="40">60–90 cm (+$40)</option>
+          </select>
+        </div>
+        <div class="dropdown-group">
+          <label class="dropdown-label" for="junior-upper">Upper Part Height</label>
+          <select class="height-select" id="junior-upper" data-price="0">
+            <option value="0">30–40 cm</option>
+            <option value="10">20–30 cm (+$10)</option>
+            <option value="20">40–50 cm (+$20)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="modal-images" style="margin-top:1.2rem;">
+        <img src="Gallery/stilts02.jpg" alt="Junior Stilts detail" class="modal-img-thumb" />
+        <img src="Gallery/stilts03.jpg" alt="Junior Stilts side" class="modal-img-thumb" />
       </div>
 
       <h4>Includes</h4>
@@ -134,7 +143,7 @@
       </a>
 
       <div class="details-footer">
-        <span class="details-price">from $180</span>
+        <span class="details-price" id="junior-price">$280</span>
         <a href="#contact" class="btn" style="font-size:0.85rem; padding:0.7rem 1.5rem;">Order Now</a>
       </div>
     </div>
@@ -338,6 +347,16 @@
     document.querySelectorAll('.modal-box .btn[href="#contact"]').forEach(btn => {
       btn.addEventListener('click', closeAllModals);
     });
+
+    // Junior Stilts price calculator
+    const BASE_PRICE = 280;
+    function updateJuniorPrice() {
+      const h = parseInt(document.getElementById('junior-height').value) || 0;
+      const u = parseInt(document.getElementById('junior-upper').value) || 0;
+      document.getElementById('junior-price').textContent = '$' + (BASE_PRICE + h + u);
+    }
+    document.getElementById('junior-height').addEventListener('change', updateJuniorPrice);
+    document.getElementById('junior-upper').addEventListener('change', updateJuniorPrice);
 
     // Lightbox for images
     const lightbox = document.getElementById('lightbox');
