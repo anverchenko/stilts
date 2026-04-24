@@ -572,6 +572,15 @@ section { padding: 6rem 2rem; }
   font-family: var(--font-serif);
 }
 
+/* === Main Page Gallery === */
+.main-gallery {
+  max-width: 700px;
+  margin: 0 auto;
+}
+.main-gallery .gallery-main-img {
+  cursor: zoom-in;
+}
+
 /* === Product Gallery === */
 .gallery {
   margin-bottom: 1.5rem;

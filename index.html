@@ -15,6 +15,7 @@
     <a href="#hero" class="nav-logo">Dragon.Stilts</a>
     <ul class="nav-links">
       <li><a href="#products" data-ua="Продукти" data-en="Products">Продукти</a></li>
+      <li><a href="#gallery" data-ua="Галерея" data-en="Gallery">Галерея</a></li>
       <li><a href="#why" data-ua="Чому ми" data-en="Why Us">Чому ми</a></li>
       <li><a href="#about" data-ua="Про нас" data-en="About">Про нас</a></li>
       <li><a href="#contact" data-ua="Контакт" data-en="Contact">Контакт</a></li>
@@ -86,6 +87,26 @@
     </div>
   </section>
 
+  <!-- Gallery -->
+  <section id="gallery" class="fade-in">
+    <div style="max-width:1100px; margin:0 auto;">
+      <p class="section-label" data-ua="Наші роботи" data-en="Our Work">Наші роботи</p>
+      <h2 class="section-title" data-ua="Галерея" data-en="Gallery">Галерея</h2>
+      <div class="main-gallery">
+        <div class="main-gallery-main">
+          <button class="gallery-arrow gallery-prev" id="mg-prev">&#8249;</button>
+          <img class="gallery-main-img" id="mg-main" src="Gallery/stilts01.jpg" alt="Dragon.Stilts" />
+          <button class="gallery-arrow gallery-next" id="mg-next">&#8250;</button>
+        </div>
+        <div class="gallery-thumbs" id="mg-thumbs">
+          <img class="gallery-thumb active" src="Gallery/stilts01.jpg" alt="" data-index="0" />
+          <img class="gallery-thumb" src="Gallery/stilts02.jpg" alt="" data-index="1" />
+          <img class="gallery-thumb" src="Gallery/stilts03.jpg" alt="" data-index="2" />
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Why Us -->
   <section id="why" class="fade-in">
     <p class="section-label" data-ua="Чому Dragon.Stilts" data-en="Why Dragon.Stilts">Чому Dragon.Stilts</p>
@@ -145,6 +166,12 @@
     </div>
   </section>
 
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close">&times;</button>
+    <img id="lightbox-img" src="" alt="" />
+  </div>
+
   <!-- Footer -->
   <footer>
     <p><span data-ua="© 2026 Dragon.Stilts. Всі права захищені." data-en="© 2026 Dragon.Stilts. All rights reserved.">© 2026 Dragon.Stilts. Всі права захищені.</span></p>
@@ -166,6 +193,27 @@
         burger.setAttribute('aria-expanded', false);
       });
     });
+
+    // Main gallery
+    (function() {
+      const thumbs = [...document.querySelectorAll('#mg-thumbs .gallery-thumb')];
+      const mainImg = document.getElementById('mg-main');
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      let current = 0;
+      function showSlide(idx) {
+        current = (idx + thumbs.length) % thumbs.length;
+        mainImg.src = thumbs[current].src;
+        thumbs.forEach((t, i) => t.classList.toggle('active', i === current));
+        thumbs[current].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }
+      thumbs.forEach((t, i) => t.addEventListener('click', () => showSlide(i)));
+      document.getElementById('mg-prev').addEventListener('click', () => showSlide(current - 1));
+      document.getElementById('mg-next').addEventListener('click', () => showSlide(current + 1));
+      mainImg.addEventListener('click', () => { lightboxImg.src = mainImg.src; lightbox.classList.add('open'); });
+      document.querySelector('.lightbox-close').addEventListener('click', () => lightbox.classList.remove('open'));
+      lightbox.addEventListener('click', e => { if (e.target === lightbox) lightbox.classList.remove('open'); });
+    })();
 
     // Scroll fade-in
     const observer = new IntersectionObserver(entries => {
