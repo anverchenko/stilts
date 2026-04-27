@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pro Stage Stilts — Dragon.Stilts</title>
+  <title>Model D2 — Dragon.Stilts</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
@@ -26,12 +26,12 @@
   </div>
 
   <p class="product-card-tag" data-ua="Професійний" data-en="Professional">Професійний</p>
-  <h1 style="font-family:var(--font-serif);font-size:2rem;color:var(--text);margin:0.3rem 0 1.2rem;">Pro Stage Stilts</h1>
+  <h1 style="font-family:var(--font-serif);font-size:2rem;color:var(--text);margin:0.3rem 0 1.2rem;">Stilts Model D2</h1>
 
   <div class="gallery">
     <div class="gallery-main">
       <button class="gallery-arrow gallery-prev" aria-label="Prev">&#8249;</button>
-      <img class="gallery-main-img" id="gallery-main-img" src="Gallery/stilts01.jpg" alt="Pro Stage Stilts" />
+      <img class="gallery-main-img" id="gallery-main-img" src="Gallery/stilts01.jpg" alt="Model D2" />
       <button class="gallery-arrow gallery-next" aria-label="Next">&#8250;</button>
     </div>
     <div class="gallery-thumbs">
@@ -41,14 +41,13 @@
     </div>
   </div>
 
-  <p data-ua="Створені для вибагливих сценічних та вуличних виступів. Промислова конструкція поєднується з ергономічним комфортом для тривалого використання." data-en="Built for demanding stage and street performances. Industrial-strength construction combined with ergonomic comfort for long-duration wear.">Створені для вибагливих сценічних та вуличних виступів. Промислова конструкція поєднується з ергономічним комфортом для тривалого використання.</p>
+  <p data-ua="Професійні ходулі для вибагливих сценічних та вуличних виступів. Висота 50–150 см, сталь + алюміній." data-en="Professional stilts for demanding stage and street performances. Height range 50–150 cm, steel + aluminum.">Професійні ходулі для вибагливих сценічних та вуличних виступів. Висота 50–150 см, сталь + алюміній.</p>
 
   <h4 data-ua="Характеристики" data-en="Specifications">Характеристики</h4>
   <ul style="list-style:none;margin:0.5rem 0 1rem;line-height:1.9;">
-    <li data-ua="— Висота: 40–90 см над землею" data-en="— Height range: 40–90 cm above the ground">— Висота: 40–90 см над землею</li>
-    <li data-ua="— Каркас: сталевий стрижень з алюмінієвою оболонкою" data-en="— Frame: steel core with aluminum shell">— Каркас: сталевий стрижень з алюмінієвою оболонкою</li>
+    <li data-ua="— Висота: 50–150 см над землею" data-en="— Height range: 50–150 cm above the ground">— Висота: 50–150 см над землею</li>
+    <li data-ua="— Матеріал: сталь + алюміній" data-en="— Material: steel + aluminum">— Матеріал: сталь + алюміній</li>
     <li data-ua="— Максимальне навантаження: 160 кг" data-en="— Max load: 160 kg">— Максимальне навантаження: 160 кг</li>
-    <li data-ua="— Вага: 3,2 кг (пара)" data-en="— Weight: 3.2 kg per pair">— Вага: 3,2 кг (пара)</li>
     <li data-ua="— Система швидкого розстібання (3 застібки)" data-en="— Quick-release 3-buckle system">— Система швидкого розстібання (3 застібки)</li>
     <li data-ua="— Формована EVA-піна для підтримки гомілки" data-en="— Molded EVA foam ankle support">— Формована EVA-піна для підтримки гомілки</li>
     <li data-ua="— Змінні гумові підошви" data-en="— Replaceable rubber foot pads">— Змінні гумові підошви</li>
@@ -59,11 +58,10 @@
     <li data-ua="— Пара ходуль" data-en="— One pair of stilts">— Пара ходуль</li>
     <li data-ua="— Жорсткий захисний кейс" data-en="— Hard protective case">— Жорсткий захисний кейс</li>
     <li data-ua="— Запасний комплект застібок" data-en="— Spare buckle set">— Запасний комплект застібок</li>
-    <li data-ua="— Запасні підошви" data-en="— Spare foot pads">— Запасні підошви</li>
   </ul>
 
   <div class="details-footer">
-    <span class="details-price">$320</span>
+    <span class="details-price">$450</span>
     <a href="index.html#contact" class="btn" style="font-size:0.85rem;padding:0.7rem 1.5rem;" data-ua="Замовити" data-en="Order Now">Замовити</a>
   </div>
 
@@ -85,7 +83,6 @@
       setLang((localStorage.getItem('lang') || 'ua') === 'ua' ? 'en' : 'ua');
     });
 
-    // Gallery
     const thumbs = [...document.querySelectorAll('.gallery-thumb')];
     const mainImg = document.getElementById('gallery-main-img');
     const lightbox = document.getElementById('lightbox');
@@ -102,7 +99,6 @@
     thumbs.forEach((t, i) => t.addEventListener('click', () => showSlide(i)));
     document.querySelector('.gallery-prev').addEventListener('click', () => showSlide(current - 1));
     document.querySelector('.gallery-next').addEventListener('click', () => showSlide(current + 1));
-
     mainImg.addEventListener('click', () => { lightboxImg.src = mainImg.src; lightbox.classList.add('open'); });
     document.querySelector('.lightbox-close').addEventListener('click', () => lightbox.classList.remove('open'));
     lightbox.addEventListener('click', e => { if (e.target === lightbox) lightbox.classList.remove('open'); });

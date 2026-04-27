@@ -91,7 +91,7 @@
     3)"40-50 сm". При виборі цього пункту - dropdown2_price = 0
 
  При кождній зміні в dropdown1 або dropdown2 -- перераховуємо Ціну Виробу1: 
-   Ціна Виробу1 =$280 + dropdown1_price + dropdown2_price   
+   Ціна Виробу1 =$350 + dropdown1_price + dropdown2_price   
 
 
 
